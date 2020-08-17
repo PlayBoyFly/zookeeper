@@ -1,0 +1,2 @@
+1.启动脚本
+./zkServer.sh  start-foreground /Users/lichao/softwares/apache-zookeeper-3.6.1-bin/conf/zoo1.cfg
