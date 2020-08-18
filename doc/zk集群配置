@@ -1,2 +1,12 @@
 1.启动脚本
 ./zkServer.sh  start-foreground /Users/lichao/softwares/apache-zookeeper-3.6.1-bin/conf/zoo1.cfg
+2.单机集群需要配置的内容
+ 2.1:配置三个不同的data目录。
+ 2.2:每个data目录下面放置一个myid的文本文件，里面写上机器标识，类似1，2，3保证单机上面的三个目录不重复。
+ 2.3:准备三个启动管理的配置文件,可以用模板文件修改，准备三个端口
+   #zk单个节点接收客户端连接的端口
+   clientPort=2182
+   #zk集群的整体配置，前面是固定的，后面:分隔依次代表主机IP，节点通信端口号，选举端口号
+   server.1=localhost:2888:3888
+   server.2=localhost:2889:3889
+   server.3=localhost:2887:3887
